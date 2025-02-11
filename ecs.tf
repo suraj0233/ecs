@@ -41,7 +41,7 @@ resource "aws_lb_target_group" "example" {
 }
 
 resource "aws_ecs_service" "example" {
-  name            = "example-ecs"
+  name            = "myecs"
   cluster         = aws_ecs_cluster.example.id
   task_definition = aws_ecs_task_definition.example.arn
   desired_count   = 1
