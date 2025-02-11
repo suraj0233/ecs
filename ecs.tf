@@ -13,7 +13,7 @@ resource "aws_ecs_task_definition" "example" {
   network_mode             = "awsvpc"
   cpu                      = "256"
   memory                   = "512"
-  execution_role_arn       = "arn:aws:iam::992382549591:role/ecsTaskExecutionRoleAvinash"  # Replace with your ECS execution role ARN
+  execution_role_arn       = "arn:aws:iam::992382549591:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS"
 
   container_definitions = jsonencode([{
     name      = "example-container"
@@ -48,8 +48,8 @@ resource "aws_ecs_service" "example" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets          = ["subnet-05850df941d39044a"]  # Replace with your subnet IDs
-    security_groups = ["sg-0d988d042b4944b58"]  # Replace with your security group ID
+    subnets          = ["subnet-0096e4805ecebb1f8"]  # Replace with your subnet IDs
+    security_groups = ["sg-0ce7793976feda023"]  # Replace with your security group ID
     assign_public_ip = true
   }
   # Ensure the GitHub App has proper access to the repository.
