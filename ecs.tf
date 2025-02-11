@@ -30,7 +30,7 @@ resource "aws_lb_target_group" "example" {
   name     = "surajtg"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = "vpc-0b25f7ef0f18ee5ef"  # Replace with your VPC ID
+  vpc_id   = "vpc-01dcbc1773873e8bf"  # Replace with your VPC ID
   target_type = "ip"  # Ensure this is set to 'ip' for Fargate
 
   health_check {
@@ -48,7 +48,7 @@ resource "aws_ecs_service" "example" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets          = ["subnet-0096e4805ecebb1f8"]  # Replace with your subnet IDs
+    subnets          = ["subnet-0f8347458ac332e93"]  # Replace with your subnet IDs
     security_groups = ["sg-0ce7793976feda023"]  # Replace with your security group ID
     assign_public_ip = true
   }
